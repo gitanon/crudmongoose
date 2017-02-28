@@ -12,7 +12,7 @@ var users = require('./routes/users');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost/crudmongoose');
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/crudmongoose');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
